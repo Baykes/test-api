@@ -1,9 +1,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine as build
 WORKDIR /app
-
 COPY . .
 RUN dotnet restore
-RUN dotnet publish -l /app/published-app -- configuration Release
+RUN dotnet publish -o /app/published-app --configuration Release
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine as runtime
 WORKDIR /app
