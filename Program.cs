@@ -5,7 +5,7 @@ var app = builder.Build();
 app.Urls.Add("http://0.0.0.0:8080");
 app.MapGet("/", () =>
 {
-    return "bye, world";
+    return "Hello, world";
 })
 .WithName("hello");
 
